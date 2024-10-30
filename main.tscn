@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bf6v1ae40lclp"]
+[gd_scene load_steps=2 format=3 uid="uid://c17t18q6xn6um"]
 
-[ext_resource type="PackedScene" uid="uid://bsgsg8ewjcgsk" path="res://base.tscn" id="1_ion1b"]
+[ext_resource type="PackedScene" uid="uid://c3lrg1xy3kqgb" path="res://player.tscn" id="1_ye1hx"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Base" parent="." instance=ExtResource("1_ion1b")]
-position = Vector2(569, 611)
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648)
+
+[node name="Player" parent="." instance=ExtResource("1_ye1hx")]
