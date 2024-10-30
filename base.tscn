@@ -7,28 +7,28 @@
 size = Vector2(68, 68)
 
 [node name="Base" type="Node2D"]
+position = Vector2(32, 32)
 script = ExtResource("1_xu8bg")
 
 [node name="Base" type="Sprite2D" parent="."]
-position = Vector2(32, 32)
+position = Vector2(1.90735e-06, 1.90735e-06)
 scale = Vector2(0.170103, 0.170103)
 texture = ExtResource("1_327ae")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_cceck")
 
 [node name="Health" type="RichTextLabel" parent="."]
-offset_left = 19.0
-offset_top = 19.0
-offset_right = 45.0
-offset_bottom = 45.0
+offset_left = -13.0
+offset_top = -12.0
+offset_right = 13.0
+offset_bottom = 14.0
 bbcode_enabled = true
 text = "[center]3"
+metadata/_edit_use_anchors_ = true
 
 [node name="EnemySpawnPoint" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(32, 32)
 gizmo_extents = 550.0
