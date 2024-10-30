@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-var speed = 400  # Maximum speed in pixels/sec
-var acceleration = 2000  # How quickly to reach max speed
-var friction = 1000  # How quickly to slow down
+var speed = 400  			# Maximum speed in pixels/sec
+var acceleration = 1000  	# How quickly to reach max speed
+var friction = 500  		# How quickly to slow down
 
-func _physics_process(delta):
+func _physics_process(delta)	:
 	# Get input direction vector
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
