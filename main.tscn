@@ -1,11 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://c17t18q6xn6um"]
+[gd_scene load_steps=4 format=3 uid="uid://c17t18q6xn6um"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_s2sld"]
 [ext_resource type="PackedScene" uid="uid://c3lrg1xy3kqgb" path="res://player.tscn" id="1_ye1hx"]
+[ext_resource type="PackedScene" path="res://enemy.tscn" id="3_6qqcd"]
 
 [node name="Main" type="Node2D"]
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0.0705882, 0.0705882, 0.0705882, 1)
-polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648)
+script = ExtResource("1_s2sld")
+mob_scene = ExtResource("3_6qqcd")
 
 [node name="Player" parent="." instance=ExtResource("1_ye1hx")]
+unique_name_in_owner = true
+position = Vector2(515, 259)
+enemy_scene = ExtResource("3_6qqcd")
+
+[node name="Enemy_Spawn" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Enemy_Spawn" to="." method="_on_enemy_spawn_timeout"]

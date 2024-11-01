@@ -4,6 +4,17 @@ var speed = 400  			# Maximum speed in pixels/sec
 var acceleration = 1000  	# How quickly to reach max speed
 var friction = 500  		# How quickly to slow down
 
+
+@onready var player: CharacterBody2D = %Player
+@export var enemy_scene : PackedScene
+# Properties
+@export var radius : int = 500
+ 
+
+func _ready():
+	pass
+
+
 func _physics_process(delta)	:
 	# Get input direction vector
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
