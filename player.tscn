@@ -11,10 +11,17 @@ scale = Vector2(0.404858, 0.404858)
 script = ExtResource("1_avse6")
 
 [node name="BG" type="Polygon2D" parent="."]
-position = Vector2(-2628.08, -1682.07)
-scale = Vector2(4.55771, 5.05232)
+position = Vector2(-4408.95, -3895.19)
+scale = Vector2(7.66155, 11.2545)
 color = Color(0.0705882, 0.0705882, 0.0705882, 1)
 polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 789.22, 648, 0, 648)
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-13673.9, -61784.6)
+scale = Vector2(23.7613, 178.517)
+points = PackedVector2Array(575.465, 346.1, 761.162, 346.1)
+width = 0.01
+default_color = Color(1, 1, 1, 0.603922)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mxrov")
