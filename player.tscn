@@ -16,19 +16,12 @@ scale = Vector2(7.66155, 11.2545)
 color = Color(0.0705882, 0.0705882, 0.0705882, 1)
 polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 789.22, 648, 0, 648)
 
-[node name="Line2D" type="Line2D" parent="."]
-position = Vector2(-13673.9, -61784.6)
-scale = Vector2(23.7613, 178.517)
-points = PackedVector2Array(575.465, 346.1, 761.162, 346.1)
-width = 0.01
-default_color = Color(1, 1, 1, 0.603922)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mxrov")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_mxrov")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -37,3 +30,14 @@ texture = ExtResource("2_soubv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+
+[node name="Shoot_Detector" type="Area2D" parent="."]
+
+[node name="Shoot_Range" type="Polygon2D" parent="Shoot_Detector"]
+unique_name_in_owner = true
+color = Color(1, 1, 1, 0.0666667)
+polygon = PackedVector2Array(0, 0, 1800, -400, 1800, 400)
+
+[node name="Shoot_Range_Hitbox" type="CollisionPolygon2D" parent="Shoot_Detector"]
+unique_name_in_owner = true
+polygon = PackedVector2Array(0, 0, 1800, -400, 1800, 400)
