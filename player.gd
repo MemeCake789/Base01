@@ -17,7 +17,14 @@ var target_zoom =				ZOOM_OUT_TARGET
 var target_foci_zoom = 			FOCI_ZOOM_OUT_TARGET
 var target_foci_hitbox_zoom = 	FOCI_ZOOM_OUT_TARGET
 
+@export var Bullet : PackedScene
 
+func shoot():
+	var b = Bullet.instantiate()
+	owner.add_child(b)
+	b.global_position = global_position
+	b.linear_velocity = velocity.normalized()
+	b.look_at(get_global_mouse_position())
 
 func _ready():
 	pass
@@ -41,7 +48,9 @@ func _physics_process(delta):
 	%Shoot_Range.polygon[2] = 			lerp(%Shoot_Range.polygon[2], 			target_foci_zoom[1], 		ZOOM_SPEED * delta)
 		
 	$Camera2D.zoom = lerp($Camera2D.zoom, target_zoom, ZOOM_SPEED * delta)
-
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
+		
 func _input(event):
 	if event.is_action_pressed("right_click"):
 		target_zoom = ZOOM_IN_TARGET

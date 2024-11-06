@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3lrg1xy3kqgb"]
+[gd_scene load_steps=5 format=3 uid="uid://c3lrg1xy3kqgb"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_avse6"]
+[ext_resource type="PackedScene" uid="uid://jbk710cg66q8" path="res://bullet.tscn" id="2_2b2eh"]
 [ext_resource type="Texture2D" uid="uid://clyhbua34dayn" path="res://Image.png" id="2_soubv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxrov"]
@@ -9,6 +10,7 @@ size = Vector2(70, 70)
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.404858, 0.404858)
 script = ExtResource("1_avse6")
+Bullet = ExtResource("2_2b2eh")
 
 [node name="BG" type="Polygon2D" parent="."]
 position = Vector2(-4408.95, -3895.19)
@@ -41,3 +43,8 @@ polygon = PackedVector2Array(0, 0, 1800, -400, 1800, 400)
 [node name="Shoot_Range_Hitbox" type="CollisionPolygon2D" parent="Shoot_Detector"]
 unique_name_in_owner = true
 polygon = PackedVector2Array(0, 0, 1800, -400, 1800, 400)
+
+[node name="Shoot_Point" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(91.3901, 0)
+gizmo_extents = 19.0
